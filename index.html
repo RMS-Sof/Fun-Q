@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Funny Quotes Board</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .quote-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .next-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .exit-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box" id="quoteBox">Loading...</div>
+    <div class="buttons">
+        <button class="next-btn" onclick="showRandomQuote()">Next</button>
+        <button class="exit-btn" onclick="exitBoard()">Exit</button>
+    </div>
+
+    <script>
+        const quotes = [
+            "I can resist everything except temptation. - Oscar Wilde",
+            "People say nothing is impossible, but I do nothing every day. - A.A. Milne",
+            "Behind every great man, there is a woman rolling her eyes. - Jim Carrey",
+            "Life is short. Smile while you still have teeth. - Unknown",
+            "I am not lazy, I am just on energy-saving mode. - Unknown",
+            "If at first you don’t succeed, then skydiving isn’t for you. - Steven Wright",
+            "A day without laughter is a day wasted. - Charlie Chaplin",
+            "My life feels like a test I didn’t study for. - Unknown",
+            "If you think nobody cares if you’re alive, try missing a couple of car payments. - Earl Wilson",
+            "Everything is funny, as long as it’s happening to someone else. - Will Rogers",
+            "Why do they call it rush hour when nothing moves? - Robin Williams",
+            "Common sense is like deodorant. The people who need it most never use it. - Unknown",
+            "Before you marry a person, you should first make them use a computer with slow internet to see who they really are. - Will Ferrell",
+            "Money can’t buy happiness, but it keeps the kids in touch. - Unknown",
+            "Never put off till tomorrow what you can do the day after tomorrow just as well. - Mark Twain",
+            "Age is something that doesn’t matter, unless you are a cheese. - Luis Bunuel",
+            "All generalizations are false, including this one. - Mark Twain",
+            "A clear conscience is usually the sign of a bad memory. - Steven Wright",
+            "I’m writing a book. I’ve got the page numbers done. - Steven Wright",
+            "A pessimist is a man who thinks everybody is as nasty as himself, and hates them for it. - George Bernard Shaw",
+            "I told my wife the truth. I told her I was seeing a psychiatrist. Then she told me the truth: that she was seeing a psychiatrist, two plumbers, and a bartender. - Rodney Dangerfield",
+            "I refuse to answer that question on the grounds that I don’t know the answer. - Douglas Adams",
+            "I have not failed. I’ve just found 10,000 ways that won’t work. - Thomas Edison",
+            "The early bird might get the worm, but the second mouse gets the cheese. - Steven Wright",
+            "I’d agree with you, but then we’d both be wrong. - Unknown",
+            "Light travels faster than sound. This is why some people appear bright until you hear them speak. - Alan Dundes",
+            "The only mystery in life is why the kamikaze pilots wore helmets. - Al McGuire",
+            "Never argue with an idiot. They will drag you down to their level and beat you with experience. - Mark Twain",
+            "Life is like a sewer… what you get out of it depends on what you put into it. - Tom Lehrer",
+            "A government that robs Peter to pay Paul can always depend on the support of Paul. - George Bernard Shaw",
+            "Some people graduate with honors, I am just honored to graduate. - Unknown",
+            "Marriage is the only war where you sleep with the enemy. - Unknown",
+            "I drink to make other people more interesting. - Ernest Hemingway",
+            "If I were two-faced, would I be wearing this one? - Abraham Lincoln",
+            "A fool and his money are soon partying. - Steven Wright",
+            "If life gives you lemons, squirt someone in the eye. - Cathy Guisewite",
+            "I used to think I was indecisive, but now I’m not too sure. - Unknown"
+        ];
+
+        function showRandomQuote() {
+            const quoteBox = document.getElementById("quoteBox");
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteBox.textContent = quotes[randomIndex];
+        }
+
+        function exitBoard() {
+            document.body.innerHTML = "<h2>Thank you for laughing with us!</h2>";
+        }
+
+        // Show a random quote on load
+        showRandomQuote();
+    </script>
+</body>
+</html>
